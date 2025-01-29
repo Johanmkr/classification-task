@@ -9,3 +9,4 @@ dependencies:
   - scipy
   - altair
   - vl-convert-python
+  - pytest

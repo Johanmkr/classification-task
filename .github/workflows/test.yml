@@ -26,4 +26,5 @@ jobs:
     - name: Run tests
       run: |
         ./test.sh
+        pytest generate_data.py
       shell: bash -el {0}
