@@ -1,0 +1,301 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+chart             10              1              1
+predictions       10              1              1
+total             21              1              1
+
+Select jobs to execute...
+
+[Wed Jan 29 11:21:51 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_06.csv, data/test_06.csv
+    output: results/predictions_06.csv
+    log: logs/predictions_06.txt
+    jobid: 10
+    wildcards: number=06
+    resources: tmpdir=/tmp
+
+
+[Wed Jan 29 11:21:51 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_05.csv, data/test_05.csv
+    output: results/predictions_05.csv
+    log: logs/predictions_05.txt
+    jobid: 8
+    wildcards: number=05
+    resources: tmpdir=/tmp
+
+
+[Wed Jan 29 11:21:51 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_04.csv, data/test_04.csv
+    output: results/predictions_04.csv
+    log: logs/predictions_04.txt
+    jobid: 16
+    wildcards: number=04
+    resources: tmpdir=/tmp
+
+
+[Wed Jan 29 11:21:51 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_09.csv, data/test_09.csv
+    output: results/predictions_09.csv
+    log: logs/predictions_09.txt
+    jobid: 2
+    wildcards: number=09
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:57 2025]
+Finished job 8.
+1 of 21 steps (5%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:57 2025]
+rule chart:
+    input: plot_results.py, results/predictions_05.csv, data/train_05.csv
+    output: results/chart_05.svg
+    log: logs/chart_05.txt
+    jobid: 7
+    wildcards: number=05
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:57 2025]
+Finished job 16.
+2 of 21 steps (10%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:57 2025]
+rule chart:
+    input: plot_results.py, results/predictions_04.csv, data/train_04.csv
+    output: results/chart_04.svg
+    log: logs/chart_04.txt
+    jobid: 15
+    wildcards: number=04
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:57 2025]
+Finished job 10.
+3 of 21 steps (14%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:57 2025]
+rule chart:
+    input: plot_results.py, results/predictions_06.csv, data/train_06.csv
+    output: results/chart_06.svg
+    log: logs/chart_06.txt
+    jobid: 9
+    wildcards: number=06
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:58 2025]
+Finished job 15.
+4 of 21 steps (19%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:58 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_01.csv, data/test_01.csv
+    output: results/predictions_01.csv
+    log: logs/predictions_01.txt
+    jobid: 4
+    wildcards: number=01
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:58 2025]
+Finished job 7.
+5 of 21 steps (24%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:58 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_10.csv, data/test_10.csv
+    output: results/predictions_10.csv
+    log: logs/predictions_10.txt
+    jobid: 20
+    wildcards: number=10
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:59 2025]
+Finished job 9.
+6 of 21 steps (29%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:59 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_08.csv, data/test_08.csv
+    output: results/predictions_08.csv
+    log: logs/predictions_08.txt
+    jobid: 14
+    wildcards: number=08
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:21:59 2025]
+Finished job 2.
+7 of 21 steps (33%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:21:59 2025]
+rule chart:
+    input: plot_results.py, results/predictions_09.csv, data/train_09.csv
+    output: results/chart_09.svg
+    log: logs/chart_09.txt
+    jobid: 1
+    wildcards: number=09
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:00 2025]
+Finished job 1.
+8 of 21 steps (38%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:00 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_07.csv, data/test_07.csv
+    output: results/predictions_07.csv
+    log: logs/predictions_07.txt
+    jobid: 18
+    wildcards: number=07
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:04 2025]
+Finished job 20.
+9 of 21 steps (43%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:04 2025]
+rule chart:
+    input: plot_results.py, results/predictions_10.csv, data/train_10.csv
+    output: results/chart_10.svg
+    log: logs/chart_10.txt
+    jobid: 19
+    wildcards: number=10
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:05 2025]
+Finished job 14.
+10 of 21 steps (48%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:05 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_02.csv, data/test_02.csv
+    output: results/predictions_02.csv
+    log: logs/predictions_02.txt
+    jobid: 12
+    wildcards: number=02
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:05 2025]
+Finished job 19.
+11 of 21 steps (52%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:05 2025]
+rule chart:
+    input: plot_results.py, results/predictions_08.csv, data/train_08.csv
+    output: results/chart_08.svg
+    log: logs/chart_08.txt
+    jobid: 13
+    wildcards: number=08
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:07 2025]
+Finished job 13.
+12 of 21 steps (57%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:07 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_03.csv, data/test_03.csv
+    output: results/predictions_03.csv
+    log: logs/predictions_03.txt
+    jobid: 6
+    wildcards: number=03
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:07 2025]
+Finished job 18.
+13 of 21 steps (62%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:07 2025]
+rule chart:
+    input: plot_results.py, results/predictions_07.csv, data/train_07.csv
+    output: results/chart_07.svg
+    log: logs/chart_07.txt
+    jobid: 17
+    wildcards: number=07
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:08 2025]
+Finished job 4.
+14 of 21 steps (67%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:08 2025]
+rule chart:
+    input: plot_results.py, results/predictions_01.csv, data/train_01.csv
+    output: results/chart_01.svg
+    log: logs/chart_01.txt
+    jobid: 3
+    wildcards: number=01
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:08 2025]
+Finished job 17.
+15 of 21 steps (71%) done
+[Wed Jan 29 11:22:09 2025]
+Finished job 3.
+16 of 21 steps (76%) done
+[Wed Jan 29 11:22:11 2025]
+Finished job 12.
+17 of 21 steps (81%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:11 2025]
+rule chart:
+    input: plot_results.py, results/predictions_02.csv, data/train_02.csv
+    output: results/chart_02.svg
+    log: logs/chart_02.txt
+    jobid: 11
+    wildcards: number=02
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:12 2025]
+Finished job 11.
+18 of 21 steps (86%) done
+[Wed Jan 29 11:22:12 2025]
+Finished job 6.
+19 of 21 steps (90%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:12 2025]
+rule chart:
+    input: plot_results.py, results/predictions_03.csv, data/train_03.csv
+    output: results/chart_03.svg
+    log: logs/chart_03.txt
+    jobid: 5
+    wildcards: number=03
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:13 2025]
+Finished job 5.
+20 of 21 steps (95%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:22:13 2025]
+localrule all:
+    input: results/chart_09.svg, results/chart_01.svg, results/chart_03.svg, results/chart_05.svg, results/chart_06.svg, results/chart_02.svg, results/chart_08.svg, results/chart_04.svg, results/chart_07.svg, results/chart_10.svg
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:22:13 2025]
+Finished job 0.
+21 of 21 steps (100%) done
+Complete log: /home/johan/Documents/phd/colab_coding_course/classification-task/.snakemake/log/2025-01-29T112150.931103.snakemake.log

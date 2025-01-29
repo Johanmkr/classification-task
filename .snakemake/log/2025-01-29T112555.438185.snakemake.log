@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+chart              1              1              1
+predictions        1              1              1
+total              3              1              1
+
+Select jobs to execute...
+
+[Wed Jan 29 11:25:55 2025]
+rule predictions:
+    input: generate_predictions.py, data/train_01.csv, data/test_01.csv
+    output: results/predictions_01.csv
+    log: logs/predictions_01.txt
+    jobid: 4
+    wildcards: number=01
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:26:00 2025]
+Finished job 4.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:26:00 2025]
+rule chart:
+    input: plot_results.py, results/predictions_01.csv, data/train_01.csv
+    output: results/chart_01.svg
+    log: logs/chart_01.txt
+    jobid: 3
+    wildcards: number=01
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:26:01 2025]
+Finished job 3.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Wed Jan 29 11:26:01 2025]
+localrule all:
+    input: results/chart_09.svg, results/chart_01.svg, results/chart_03.svg, results/chart_05.svg, results/chart_06.svg, results/chart_02.svg, results/chart_08.svg, results/chart_04.svg, results/chart_07.svg, results/chart_10.svg
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Wed Jan 29 11:26:01 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /home/johan/Documents/phd/colab_coding_course/classification-task/.snakemake/log/2025-01-29T112555.438185.snakemake.log
