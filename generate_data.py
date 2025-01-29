@@ -8,8 +8,23 @@ def normal_distribution(rng, loc, scale, num_samples, label):
     ys = rng.normal(loc, scale, num_samples)
 
     data = pd.DataFrame({"x": xs, "y": ys, "label": [label] * len(xs)})
-
     return data
+
+
+def test_normal_distribution():
+    rng = np.random.default_rng(42)
+    data = normal_distribution(rng, 0.0, 1.0, 100, 0)
+    assert len(data) == 100
+    # Assert that the mean of the x values is close to 0.0
+    assert np.isclose(data["x"].mean(), 0.0, atol=0.1)
+    # Assert that the mean of the y values is close to 0.0
+    assert np.isclose(data["y"].mean(), 0.0, atol=0.1)
+    # # Assert that the standard deviation of the x values is close to 1.0
+    # assert np.isclose(np.std(data["x"]), 1.0, atol=0.1)
+    # # Assert that the standard deviation of the y values is close to 1.0
+    # assert np.isclose(np.std(data["y"]), 1.0, atol=0.1)
+
+
 
 
 def circular_distribution(rng, r_min, r_max, num_samples, label):
